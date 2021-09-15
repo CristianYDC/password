@@ -1,0 +1,286 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Azeret Mono', monospace;
+	font-size: 1rem;
+}
+
+*::selection {
+	background:#272727 ;
+	color:#fff;
+}
+
+*::-moz-selection {
+	background:#272727;
+	color:#fff;
+}
+
+body {
+	background: #272727;
+	color: #fff;
+}
+
+.titulo_1{
+font-size: 2rem;
+}
+a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.contenedor {
+	max-width:500px;
+    max-height: 500px;
+	width: 70%;
+	margin: 40px auto;
+}
+
+
+/* ------------------------- */
+/* Logotipo */
+/* ------------------------- */
+.logo {
+	margin-bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.logo img {
+	width: 50%;
+	vertical-align: top;
+ }
+
+/* ------------------------- */
+/* Estilos de Filas y Columnas */
+/* ------------------------- */
+.app .fila {
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.app .col {
+	width: 50%;
+}
+
+/* ------------------------- */
+/* Estilos generales de inputs y botones */
+/* ------------------------- */
+.app label {
+	line-height: 40px;
+}
+
+.app input {
+	text-align: center;
+	border: none;
+}
+
+.app .btn {
+	width: 100%;
+	background: #15AFFC;
+	color: #fff;
+	display: inline-block;
+	height: 40px;
+	vertical-align: top;
+	font-size: 1rem;
+	text-align: center;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+
+.app .btn:hover {
+	background: #0082AF;
+}
+
+.app .btn.false{
+	background: #0082AF;
+}
+
+/* ------------------------- */
+/* Fila: Numero de Caracteres */
+/* ------------------------- */
+.app .numero-caracteres .botones div {
+	width: 100%;
+}
+
+.app .numero-caracteres .botones div:nth-child(1) button{
+	border-radius: 4px 0 0 4px;
+}
+.app .numero-caracteres input {
+	height: 40px;
+	width: 100%;
+	cursor: default;
+	background: #272727;
+	color: #fff;
+}
+.app .numero-caracteres .botones div:nth-child(3) button{
+	border-radius: 0 4px 4px 0;
+}
+
+.app .numero-caracteres .botones{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/* ------------------------- */
+/* Fila: Generar Contraseña */
+/* ------------------------- */
+.app .fila.generar {
+	margin-bottom: 10px;
+}
+
+.app .fila.generar .col:nth-child(1){
+	width: 45%;
+}
+
+.app .fila.generar .col:nth-child(2) {
+	width: 50%;
+}
+
+.app .fila.generar .btn.btn-generar {
+	width: 100%;
+	height: 40px;
+	font-size: 1rem;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.app .fila.generar .btn.btn-generar i {
+	margin-left: 5px;
+	position: relative;
+	top:-1px;
+	font-size: 14px;
+}
+
+.app .fila.generar .btn.btn-generar:after {
+	content: "";
+	display: inline-block;
+	background: #15AFFC;
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top:13px;
+	right:-7px;
+	transform: rotate(45deg);
+	z-index: 9;
+	transition: all .3s ease;
+}
+
+.app .fila.generar .col:nth-child(1):hover .btn-generar:after {
+	background: #0082AF;
+}
+
+.app .fila.generar .input-password {
+	width: 100%;
+	background: none;
+	border-radius: 4px;
+	border:1px solid rgba(255,255,255,.25);
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+
+.app .fila.generar .input-password:hover {
+	border:1px solid rgb(29,214,9);
+}
+
+.app .fila.generar input::selection {
+	background: #272727;
+}
+
+.app .fila.generar input::-moz-selection {
+	background: #272727;
+}
+
+/* ------------------------- */
+/* Fila: Alerta */
+/* ------------------------- */
+.app .fila.alerta {
+	justify-content: flex-end;
+}
+
+.app .fila.alerta .col {
+	width: 65%;
+}
+.app .fila.alerta .alerta-copiado {
+	text-align: center;
+	color: rgba(255,255,255,0);
+	transition: all .3s ease;
+}
+
+.app .fila.alerta .alerta-copiado.active {
+	color: rgba(255,255,255,1);
+}
+
+.app .fila.alerta .alerta-copiado p,
+.app .fila.alerta .alerta-copiado i {
+	font-size: 0.8rem;
+	margin-left: 32px;
+}
+
+/* ------------------------- */
+/* Media Queries */
+/* ------------------------- */
+@media screen and (max-width: 500px){
+	.logo img {
+		width: 50%;
+	}
+	.contenedor{
+		min-width: 254px;
+	}
+
+	.app .fila {
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
+
+	.app .fila .col {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.app .fila.generar {
+		border-top:1px solid rgba(255,255,255,.25);
+		padding-top:40px;
+		font-size:1rem;
+	}
+
+	.app .fila.generar .col:nth-child(1),
+	.app .fila.generar .col:nth-child(2) {
+		width: 100%;
+	}
+
+	.app .fila.generar .btn.btn-generar:after {
+		top: auto;
+		left: 50%;
+		right: 50%;
+		bottom: -7px;
+	}
+	.col label{
+		display: flex;
+		justify-content: center;
+	}
+}
+
+/* ------------------------- */
+/* Creditos */
+/* ------------------------- */
+.creditos {
+	text-align: center;
+}
+
+.creditos p, a {
+	font-size: 1rem;
+}
